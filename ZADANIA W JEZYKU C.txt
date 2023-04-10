@@ -1,0 +1,844 @@
+ZADANIA W JEZYKU C.
+
+1.2. PODSTAWY JEZYKÓW C i C++, OPERACJE WEJSCIA I WYJSCIA. 
+
+1.2.1.Napisz program wypisujący na standardowym wyjściu napis „Hello World”.
+#include <stdio.h>
+
+int main() {
+    printf("Hello World\n");
+    return 0;
+}
+1.2.2
+Napisz program wypisujący w kolejnych wierszach standardowego wyjścia pojedyncze słowa następującego napisu „Bardzo dlugi napis”.
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char napis[] = "Bardzo dlugi napis";
+    char *token = strtok(napis, " ");
+
+    while(token != NULL) {
+        printf("%s\n", token);
+        token = strtok(NULL, " ");
+    }
+
+    return 0;
+}
+1.2.3 Napisz program wypisujący na standardowym wyjściu następujący
+napis: „Napis zawierajacy rozne dziwne znaczki // \ \ $ & %”
+#include <stdio.h>
+
+int main() {
+    int liczba;
+
+    printf("Podaj liczbe calkowita: ");
+    scanf("%d", &liczba);
+
+    printf("Wpisana liczba to: %d\n", liczba);
+
+    return 0;
+}
+1.2.4 (r,!) Napisz program, który wczytuje ze standardowego wejścia liczbę
+całkowitą i wypisuje ją na standardowym wyjściu.
+#include <stdio.h>
+
+int main() {
+    float liczba;
+
+    printf("Podaj liczbe wymierna: ");
+    scanf("%f", &liczba);
+
+    printf("Wpisana liczba to: %f\n", liczba);
+
+    return 0;
+}
+1.2.5 (r,!) Napisz program, który wczytuje ze standardowego wejścia liczbę
+wymierną i wypisuje ją na standardowym wyjściu
+#include <stdio.h>
+
+int main() {
+    int liczba1, liczba2, liczba3;
+
+    printf("Podaj trzy liczby calkowite: ");
+    scanf("%d %d %d", &liczba1, &liczba2, &liczba3);
+
+    printf("Wpisane liczby to:\n");
+    printf("%d\n", liczba1);
+    printf("%d\n", liczba2);
+    printf("%d\n", liczba3);
+
+    return 0;
+}
+1.2.6 Napisz program, który wczytuje ze standardowego wejścia trzy liczby
+całkowite, a następnie wypisuje je w oddzielnych liniach na standardowym wyjściu
+#include <stdio.h>
+
+int main() {
+    int liczba;
+
+    printf("Podaj liczbe calkowita: ");
+    scanf("%d", &liczba);
+
+    printf("Liczba wieksza o jeden to: %d\n", liczba+1);
+
+    return 0;
+}
+1.2.7 Napisz program, który wczytuje ze standardowego wejścia liczbę całkowitą i wypisuje na standardowym wyjściu liczbę o jeden większą.
+#include <stdio.h>
+
+int main() {
+    int liczba1, liczba2, liczba3;
+    float srednia;
+
+    printf("Podaj trzy liczby calkowite: ");
+    scanf("%d %d %d", &liczba1, &liczba2, &liczba3);
+
+    srednia = (liczba1 + liczba2 + liczba3) / 3.0;
+
+    printf("Srednia arytmetyczna wynosi: %f\n", srednia);
+
+    return 0;
+}
+1.2.8 (r,!) Napisz program, który wczytuje ze standardowego wejścia trzy
+liczby całkowite i wypisuje na standardowym wyjściu ich średnią arytmetyczną.
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    float srednia;
+
+    printf("Podaj trzy liczby całkowite: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    srednia = (a + b + c) / 3.0;
+
+    printf("Średnia arytmetyczna podanych liczb to: %.2f\n", srednia);
+
+    return 0;
+}
+1.2.9 (r,!,róż) Napisz program, który wczytuje ze standardowego wejścia
+nieujemną liczbę wymierną x i wypisuje na standardowym wyjściu
+√x
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double x, pierwiastek;
+
+    printf("Podaj nieujemną liczbę wymierną: ");
+    scanf("%lf", &x);
+
+    pierwiastek = sqrt(x);
+
+    printf("Pierwiastek kwadratowy z %.2f to %.2f\n", x, pierwiastek);
+
+    return 0;
+}
+1.2.10 Napisz program, który wczytuje ze standardowego wejścia liczbę wymierną x i wypisuje na standardowym wyjściu wartość bezwzględną
+z x.
+
+#include <stdio.h>
+
+int main() {
+    float x;
+
+    printf("Podaj liczbę x: ");
+    scanf("%f", &x);
+
+    if (x < 0) {
+        x = -x;
+    }
+
+    printf("Wartość bezwzględna z x to: %.2f\n", x);
+
+    return 0;
+}
+
+1.2.11 (r) Napisz program, który wczytuje ze standardowego wejścia liczbę wymierną i wypisuje ją na standardowym wyjściu z dokładnością
+do dwóch miejsc po przecinku.
+
+#include <stdio.h>
+
+int main() {
+    float x;
+
+    printf("Podaj liczbę: ");
+    scanf("%f", &x);
+
+    printf("Liczba z dokładnością do dwóch miejsc po przecinku: %.2f\n", x);
+
+    return 0;
+}
+
+1.2.12 Napisz program, który wczytuje ze standardowego wejścia liczbę wymierną i wypisuje ją na standardowym wyjściu w notacji wykładniczej
+(czyli takiej, w której 0.2 to 2.0e-1).
+
+#include <stdio.h>
+
+int main() {
+    float x;
+
+    printf("Podaj liczbę: ");
+    scanf("%f", &x);
+
+    printf("Liczba w notacji wykładniczej: %e\n", x);
+
+    return 0;
+}
+
+
+1.3 INSTRUKCJE WARUNKOWE I WYBORU 
+
+1.3.1 (r) Napisz program, który wczytuje ze standardowego wejścia liczbę
+całkowitą n i wypisuje na standardowe wyjście wartość bezwzględną
+z n.
+Do rozwiązania zadania nie używaj funkcji bibliotecznych za wyjątkiem operacji wejścia/wyjścia
+
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    printf("Podaj liczbę: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        n = -n;
+    }
+
+    printf("Wartość bezwzględna: %d\n", n);
+
+    return 0;
+}
+1.3.2 Napisz program, który wczytuje ze standardowego wejścia dwie liczby
+całkowite i wypisuje na standardowym wyjściu większą z nich (w przypadku gdy podane liczby są równe, program powinien wypisać którąkolwiek z nich).
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+
+    printf("Podaj dwie liczby: ");
+    scanf("%d %d", &a, &b);
+
+    if (a >= b) {
+        printf("Większa liczba to: %d\n", a);
+    } else {
+        printf("Większa liczba to: %d\n", b);
+    }
+
+    return 0;
+}
+1.3.3 Napisz program, który wczytuje ze standardowego wejścia trzy liczby
+całkowite i wypisuje na standardowym wyjściu największą z ich wartości (pamiętaj o przypadku gdy wszystkie podane liczby lub dwie
+z nich są równe).
+
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+
+    printf("Podaj trzy liczby: ");
+    scanf("%d %d %d", &a, &b, &c);
+
+    if (a >= b && a >= c) {
+        printf("Największa liczba to: %d\n", a);
+    } else if (b >= a && b >= c) {
+        printf("Największa liczba to: %d\n", b);
+    } else {
+        printf("Największa liczba to: %d\n", c);
+    }
+
+    return 0;
+}
+
+1.3.4 Napisz program, który wczytuje ze standardowego wejścia dwie liczby
+całkowite i wypisuje tą o większej wartości bezwzględnej.
+
+#include <stdio.h>
+#include <stdlib.h> // do funkcji abs()
+
+int main() {
+    int a, b;
+
+    printf("Podaj dwie liczby: ");
+    scanf("%d %d", &a, &b);
+
+    if (abs(a) >= abs(b)) {
+        printf("Liczba o większej wartości bezwzględnej to: %d\n", a);
+    } else {
+        printf("Liczba o większej wartości bezwzględnej to: %d\n", b);
+    }
+
+    return 0;
+}
+
+1.3.5 (r) Napisz program obliczający pole trójkąta na podstawie wymiarów
+podanych przez użytkownika. Użytkownik powinien mieć możliwość
+podania długości podstawy i wysokości lub wszystkich boków trójkąta.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float a, b, c, h, p;
+    int choice;
+
+    printf("Podaj typ danych:\n");
+    printf("1 - podstawa i wysokość\n");
+    printf("2 - trzy boki\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Podaj długość podstawy: ");
+            scanf("%f", &a);
+            printf("Podaj wysokość: ");
+            scanf("%f", &h);
+            p = 0.5 * a * h;
+            break;
+        case 2:
+            printf("Podaj długości boków trójkąta: ");
+            scanf("%f%f%f", &a, &b, &c);
+            p = 0.5 * (a + b + c);
+            p = sqrt(p * (p - a) * (p - b) * (p - c));
+            break;
+        default:
+            printf("Niepoprawny wybór.\n");
+            return 1;
+    }
+
+    printf("Pole trójkąta wynosi: %.2f\n", p);
+    return 0;
+}
+
+1.3.6 Napisz program, który wczytuje ze standardowego wejścia współczynniki układu dwóch równań liniowych z dwoma niewiadomymi i wypisuje na standardowym wyjściu rozwiązanie układu równań. W przypadku nieskończonej liczby lub braku rozwiązań program powinien
+wypisać na standardowym wyjściu odpowiednią informację.
+Podpowiedź: zaimplementuj algorytm rozwiązywania układów równań metodą wyznaczników (inaczej nazywaną wzorami Cramera).
+
+#include <stdio.h>
+
+int main() {
+    double a1, b1, c1, a2, b2, c2;
+    printf("Podaj wspolczynniki ukladu rownan liniowych:\n");
+    printf("a1*x + b1*y = c1\na2*x + b2*y = c2\n");
+    scanf("%lf%lf%lf%lf%lf%lf", &a1, &b1, &c1, &a2, &b2, &c2);
+
+    double W = a1 * b2 - b1 * a2;
+    if (W == 0) {
+        if (c1 / a1 == c2 / a2 && c1 / b1 == c2 / b2) {
+            printf("Nieskonczenie wiele rozwiazan.\n");
+        } else {
+            printf("Brak rozwiazan.\n");
+        }
+    } else {
+        double Wx = c1 * b2 - b1 * c2;
+        double Wy = a1 * c2 - c1 * a2;
+        double x = Wx / W;
+        double y = Wy / W;
+        printf("Rozwiazanie: x = %lf, y = %lf\n", x, y);
+    }
+
+    return 0;
+}
+
+1.3.7 Napisz program, który wczytuje ze standardowego wejścia współczynniki równania kwadratowego z jedną niewiadomą i wypisuje na standardowym wyjściu wszystkie rozwiązania rzeczywiste tego równania
+lub odpowiednią informację w przypadku braku rozwiązań.
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c, delta, x1, x2;
+
+    printf("Podaj współczynniki równania kwadratowego (a, b, c): ");
+    scanf("%lf %lf %lf", &a, &b, &c);
+
+    delta = b*b - 4*a*c;
+
+    if (delta < 0) {
+        printf("Brak rozwiązań rzeczywistych.\n");
+    }
+    else if (delta == 0) {
+        x1 = -b / (2*a);
+        printf("Jedno rozwiązanie: x = %lf\n", x1);
+    }
+    else {
+        x1 = (-b - sqrt(delta)) / (2*a);
+        x2 = (-b + sqrt(delta)) / (2*a);
+        printf("Dwa rozwiązania: x1 = %lf, x2 = %lf\n", x1, x2);
+    }
+
+    return 0;
+}
+
+
+1.3.8 (r) Napisz program, który w zależności od wyboru użytkownika wczytuje ze standardowego wejścia wymiary: kwadratu, prostokąta lub trójkąta i wypisuje na standardowym wyjściu pole figury o wczytanych
+wymiarach.
+
+#include <stdio.h>
+
+int main() {
+    int choice;
+    double a, b, h, area;
+
+    printf("Wybierz figurę:\n");
+    printf("1. Kwadrat\n");
+    printf("2. Prostokąt\n");
+    printf("3. Trójkąt\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+        case 1:
+            printf("Podaj długość boku kwadratu: ");
+            scanf("%lf", &a);
+            area = a * a;
+            printf("Pole kwadratu wynosi: %lf", area);
+            break;
+        case 2:
+            printf("Podaj długości boków prostokąta (oddzielone spacją): ");
+            scanf("%lf %lf", &a, &b);
+            area = a * b;
+            printf("Pole prostokąta wynosi: %lf", area);
+            break;
+        case 3:
+            printf("Podaj długości podstawy i wysokości trójkąta (oddzielone spacją): ");
+            scanf("%lf %lf", &a, &h);
+            area = 0.5 * a * h;
+            printf("Pole trójkąta wynosi: %lf", area);
+            break;
+        default:
+            printf("Błędny wybór!");
+    }
+
+    return 0;
+}
+
+1.3.9 Napisz program kalkulator, który wykonuje wybraną przez użytkownika operacją arytmetyczną na dwóch wczytanych liczbach. Program
+powinien wczytywać dane ze standardowego wejścia i wypisywać wynik na standardowym wyjściu.
+
+#include <stdio.h>
+
+int main() {
+    char operacja;
+    double liczba1, liczba2, wynik;
+    
+    printf("Podaj pierwszą liczbę: ");
+    scanf("%lf", &liczba1);
+    printf("Podaj operację (+, -, *, /): ");
+    scanf(" %c", &operacja);
+    printf("Podaj drugą liczbę: ");
+    scanf("%lf", &liczba2);
+    
+    switch(operacja) {
+        case '+':
+            wynik = liczba1 + liczba2;
+            break;
+        case '-':
+            wynik = liczba1 - liczba2;
+            break;
+        case '*':
+            wynik = liczba1 * liczba2;
+            break;
+        case '/':
+            if (liczba2 == 0) {
+                printf("Nie można dzielić przez zero.\n");
+                return 1;
+            }
+            wynik = liczba1 / liczba2;
+            break;
+        default:
+            printf("Nieznana operacja.\n");
+            return 1;
+    }
+    
+    printf("Wynik: %lf\n", wynik);
+    
+    return 0;
+}
+
+1.4. PĘTLE 
+
+1.4.1 (r,!) Napisz program wczytujący ze standardowego wejścia dwie dodatnie liczby całkowite n i m, i wypisujący w kolejnych wierszach
+na standardowym wyjściu wszystkie dodatnie wielokrotności n mniejsze od m.
+#include <stdio.h>
+
+int main() {
+    int n, m, i;
+    printf("Podaj dwie dodatnie liczby calkowite n i m: ");
+    scanf("%d %d", &n, &m);
+    printf("Wielokrotnosci liczby %d mniejsze od %d:\n", n, m);
+    for (i = n; i < m; i += n) {
+        printf("%d\n", i);
+    }
+    return 0;
+}
+
+1.4.2 Napisz program wczytujący ze standardowego wejścia dwie dodatnie liczby całkowite n i m, i wypisujący na standardowym wyjściu
+m pierwszych wielokrotności liczby n.
+
+#include <stdio.h>
+
+int main() {
+    int n, m, i;
+
+    printf("Podaj dwie liczby calkowite n i m: ");
+    scanf("%d %d", &n, &m);
+
+    for (i = 1; i <= m; i++) {
+        printf("%d\n", i * n);
+    }
+
+    return 0;
+}
+
+1.4.3 Napisz program wczytujący ze standardowego wejścia trzy dodatnie
+liczby całkowite n, m i k, i wypisujący w kolejnych wierszach wszystkie
+wielokrotności n większe od m i mniejsze od k.
+
+#include <stdio.h>
+
+int main() {
+    int n, m, k;
+    printf("Podaj trzy liczby n, m i k: ");
+    scanf("%d %d %d", &n, &m, &k);
+
+    int i;
+    for (i = m + n - m % n; i < k; i += n) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+
+1.4.4 (r) Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na standardowym wyjściu liczbę
+n!.
+
+#include <stdio.h>
+
+int main() {
+    int n, i;
+    unsigned long long silnia = 1;
+
+    printf("Podaj nieujemna liczbe calkowita: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Niepoprawne dane!\n");
+        return 1;
+    }
+
+    for (i = 1; i <= n; i++) {
+        silnia *= i;
+    }
+
+    printf("%d! = %llu\n", n, silnia);
+
+    return 0;
+}
+
+1.4.5 Napisz program, który wczytuje ze standardowego wejścia nieujemną
+liczbę całkowitą n i wypisuje na standardowym wyjściu sumę kwadratów liczb od 0 do n, czyli wartość 0
+2 + 12 + 32 + ... + n^2.jezyk c
+
+#include <stdio.h>
+
+int main() {
+    int n, i, sum = 0;
+
+    printf("Podaj liczbe n: ");
+    scanf("%d", &n);
+
+    for (i = 0; i <= n; i++) {
+        sum += i * i;
+    }
+
+    printf("Suma kwadratow liczb od 0 do %d wynosi: %d\n", n, sum);
+
+    return 0;
+}
+
+1.4.6 Napisz program, który wczytuje ze standardowego wejścia liczbę całkowitą n (n > 2) i wypisuje na standardowym wyjściu iloczyn liczb
+parzystych z zakresu od 2 do n (czyli 2 ∗ 4 ∗ . . . ∗ n dla n parzystych
+i 2 ∗ 4 ∗ . . . ∗ (n − 1) w przeciwnym wypadku).
+
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Podaj liczbe calkowita wieksza niz 2: ");
+    scanf("%d", &n);
+    int iloczyn = 2;
+    for (int i = 4; i <= n; i += 2) {
+        iloczyn *= i;
+    }
+    printf("Iloczyn liczb parzystych z zakresu od 2 do %d wynosi: %d\n", n, iloczyn);
+    return 0;
+}
+
+
+1.4.7 Napisz program, który wczytuje ze standardowego wejścia dwie liczby
+całkowite n i m (zakładamy, że n < m) i wypisuje na standardowym
+wyjściu liczbę n ∗ . . . ∗ m
+
+#include <stdio.h>
+
+int main() {
+    int n, m;
+    long long int iloczyn = 1;
+
+    printf("Podaj dwie liczby n i m (n < m): ");
+    scanf("%d %d", &n, &m);
+
+    for (int i = n; i <= m; i++) {
+        iloczyn *= i;
+    }
+
+    printf("Iloczyn ciągu %d, %d, %d, ..., %d wynosi: %lld\n", n, n+1, n+2, m, iloczyn);
+
+    return 0;
+}
+
+1.4.8 (*,r) Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę całkowitą n i wypisuje na standardowym wyjściu element ciągu Fibonacciego o indeksie n.
+
+#include <stdio.h>
+
+int main() {
+    int n, fib1 = 0, fib2 = 1, fibn, i;
+
+    printf("Podaj indeks liczby ciągu Fibonacciego: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("Błąd: indeks musi być nieujemny.\n");
+        return 1;
+    }
+
+    if (n == 0) {
+        fibn = 0;
+    } else if (n == 1) {
+        fibn = 1;
+    } else {
+        for (i = 2; i <= n; i++) {
+            fibn = fib1 + fib2;
+            fib1 = fib2;
+            fib2 = fibn;
+        }
+    }
+
+    printf("Liczba o indeksie %d w ciągu Fibonacciego to %d.\n", n, fibn);
+    return 0;
+}
+
+1.4.9 (r,!) Napisz program, który wczytuje ze standardowego wejścia dodatnie liczby całkowite n i m, i wypisuje na standardowym wyjściu
+największy wspólny dzielnik tych liczb.
+
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    int temp;
+    while (b != 0) {
+        temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+int main() {
+    int n, m;
+    printf("Podaj dwie liczby całkowite dodatnie n i m: ");
+    scanf("%d %d", &n, &m);
+    printf("Największy wspólny dzielnik liczb %d i %d wynosi: %d\n", n, m, gcd(n, m));
+    return 0;
+}
+
+1.4.10 (r,!) Napisz program, który wczytuje ze standardowego wejścia nieujemną liczbę n i wypisuje na standardowym wyjściu wartość [√n](wartość √
+n zaokrągloną w dół do najbliższej wartości całkowitoliczbowej). Program napisz bez użycia funkcji z biblioteki matematycznej.
+
+#include <stdio.h>
+
+int main() {
+    int n, i = 0;
+    scanf("%d", &n);
+
+    while (i * i <= n) {
+        i++;
+    }
+
+    printf("%d\n", i - 1);
+    return 0;
+}
+
+1.4.11 Napisz program, który wczytuje ze standardowego wejścia liczby a, b,
+c, d i:
+a) wypisuje na standardowe wyjście najmniejszą nieujemną liczbę
+całkowitą x taką, że |a| ∗ x
+2 + b ∗ x + c > d.
+b) wypisuje na standardowe wyjście największą nieujemną liczbę całkowitą x taką, że 5∗x
+2+a∗x+b < c. Zakładamy, że taka nieujemna
+całkowita liczba x istnieje.
+c) wypisuje na standardowe wyjście największą nieujemną liczbę całkowitą x taką, że 5∗x
+2+a∗x+b ≤ c. Zakładamy, że taka nieujemna
+całkowita liczba x istnieje
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a, b, c, d, x = 0;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+
+    while (abs(a) * x * x + b * x + c <= d) {
+        x++;
+    }
+
+    printf("%d\n", x);
+
+    return 0;
+}
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a, b, c, d, x = 0;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
+
+    while (abs(a) * x * x + b * x + c <= d) {
+        x++;
+    }
+
+    printf("%d\n", x);
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a, b, c, x = 0;
+    scanf("%d %d %d", &a, &b, &c);
+
+    while (5 * x * x + a * x + b < c) {
+        x++;
+    }
+
+    printf("%d\n", x - 1);
+
+    return 0;
+}
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main()
+{
+    int a, b, c, x = 0;
+    scanf("%d %d %d", &a, &b, &c);
+
+    while (5 * x * x + a * x + b <= c) {
+        x++;
+    }
+
+    printf("%d\n", x - 1);
+
+    return 0;
+}
+
+1.4.12 (*,r) Napisz program, który wczytuje ze standardowego wejścia dodatnią liczbę n i wypisuje na standardowym wyjściu sumę wszystkich
+liczb mniejszych od n, względnie pierwszych z n.
+
+#include <stdio.h>
+
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+
+int areRelativelyPrime(int a, int b) {
+    return gcd(a, b) == 1;
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int sum = 0;
+    for (int i = 1; i < n; i++) {
+        if (areRelativelyPrime(i, n)) {
+            sum += i;
+        }
+    }
+    printf("%d\n", sum);
+    return 0;
+}
+
+1.4.13 (*, r, !) Napisz program, który wczytuje ze standardowego wejścia
+nieujemną liczbę całkowitą n i wypisuje na standardowym wyjściu
+wartość 0! + 1! + . . . + n!.
+
+#include <stdio.h>
+
+int main() {
+    int n, i, j, silnia, suma = 0;
+
+    printf("Podaj nieujemna liczbe calkowita n: ");
+    scanf("%d", &n);
+
+    for (i = 0; i <= n; i++) {
+        silnia = 1;
+        for (j = 1; j <= i; j++) {
+            silnia *= j;
+        }
+        suma += silnia;
+    }
+
+    printf("Suma silni od 0 do %d wynosi %d\n", n, suma);
+
+    return 0;
+}
+
+
+1.4.14 (*) Napisz program, który wczytuje ze standardowego wejścia liczbę
+n i wypisuje na standardowym wyjściu wszystkie trójki pitagorejskie
+(tj. trójki liczb całkowitych a, b, c takich, że a
+2 + b
+2 = c
+2
+), składające
+się z liczb mniejszych od n.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int a, b, c;
+    for (a = 1; a < n; a++) {
+        for (b = a + 1; b < n; b++) {
+            for (c = b + 1; c < n; c++) {
+                if (a * a + b * b == c * c) {
+                    printf("%d %d %d\n", a, b, c);
+                }
+            }
+        }
+    }
+
+    return 0;
+}
