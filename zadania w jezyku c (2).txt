@@ -1,0 +1,187 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+/*
+struct trojkat
+{
+    double a,b,c;
+};
+
+double obwod(struct trojkat t)
+{
+    return t.a+t.b+t.c;
+}
+
+int main()
+{
+    struct trojkat t1;
+
+    t1.a=3;
+    t1.b=4;
+    t1.c=5;
+    printf("Obwod: %f\n",obwod(t1));
+    printf("%d\n",sizeof(double));
+    printf("%d",sizeof(struct trojkat));
+}
+*/
+/*
+///cw 7.2.1
+struct trojkat
+{
+    double a,b,c;
+};
+
+double obwod(struct trojkat t)
+{
+    return t.a+t.b+t.c;
+}*/
+///cw 7.2.2
+void przepiszTrojkat(struct trojkat * t1, struct trojkat * t2)
+{
+    *t2 = t1;
+}
+
+void wypysz(struct trojkat tr1)
+{
+    printf("%f\n",tr1.a);
+    printf("%f\n",tr1.b);
+    printf("%f\n",tr1.c);
+    printf("%\n");
+}
+
+///cw 7.2.3
+struct punkt///jak obliczyc odleglosc miedzy punktani
+{
+    double x,y,z;
+};
+double odleglosc (struct punkt P,struct punkt Q)
+{
+    return sqrt ((P.x -Q.x)*(P.x -Q.x)+(P.y-Q.y)*(P.y-Q.y)+(P.z-Q.z)*(P.z-Q.z));
+}
+double minimum(struct punkt tab1[],int n)
+{
+    int i,j;
+    double pom;
+    double min=odleglosc(tab[0],tab[1]);
+    for(i =0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            pom =odleglosc(tab[i],tab[j]);
+            if(pom<min)
+            {
+                min=pom;
+            }
+        }
+    }
+    return min;
+}
+///cw 7.2.4
+void przepisz(struct punkt tab1[],struct punkt tab2[],unsigned int n)
+{
+    for(int i =0;i<n;i++)
+    {
+        tab2[i]=tab1[i];
+    }
+}
+///cw 7.2.5
+struct punkt10
+{
+    double t[10];
+};
+void przepisz(struct punkt10 tab1[],struct punkt10 tab2[],unsigned int n)
+{
+    for(int i =0;i<n:i++)
+    {
+        tab2[i]=tab1[i];
+    }
+}
+///cw 7.2.6
+struct punkt
+{
+    double *t;
+    int w;
+};
+void przepisz(struct punkt tab1[],struct punkt tab2[], unsigned int n)
+{
+    for(int i =0;i<n;i++)
+    {
+        tab2[i].t=malloc(tab1[i].w*sizeof(double));
+        for(int j =0;j<tab1[i].w;i++)
+        {
+            tab2[i].t[j]=tab1[i].t[j];
+        }
+    }
+}
+///cw 7.2.7
+
+struct Zespolone
+{
+    double re;
+    double im;
+};
+void wczytaj_liczbe_zespolona(struct Zespolone liczba)
+{
+    printf("%f + %f i\n",liczba.a,liczba.b)
+}
+void wczytaj_liczbe_zespolona(struct Zespolone liczba)
+{
+    scanf("%lf",&liczba.a);
+    scanf("%lf",&liczba.b);
+}
+struct Zespolone dodaj(struct Zespolone liczba1,struct Zespolone liczba2)
+{
+    struct Zespolone suma;
+    suma.re =liczba1.re + liczba2.re;
+    suma.im = liczba1.im + liczba2.im;
+    return suma;
+};
+///cw 7.2.9
+
+struct lista
+{
+    int i;
+    struct lista *wsk;
+};
+///cw 7.2.10 
+union super_int 
+{
+    int i;
+    unsigned int u;
+};
+
+int main()
+{
+    struct trojkat Q;
+    Q.a=3;
+    Q.b=4;
+    Q.c=5;
+    struct trojkat R;
+    R.a=3;
+    R.b=4;
+    R.c=5;
+    struct trojkat P;
+    P.a=3;
+    P.b=4;
+    P.c=5;
+    struct punkt tab[3]=(P,Q,R);
+    printf("&f",minimum(tab,3));
+    struct trojkat t1;
+    struct trojkat tr1;
+    tr1.a=3;
+    tr1.b=4;
+    tr1.c=5;
+    struct trojkat tr2;
+    tr2.a=3;
+    tr2.b=4;
+    tr2.c=5;
+    struct trojkat *wsk2=&tr2;
+    wypisz(tr1);
+    wypisz(tr2);
+    t1.a=3;
+    t1.b=4;
+    t1.c=5;
+    printf("Obwod: %f\n",obwod(t1));
+    printf("%d\n",sizeof(double));
+    printf("%d",sizeof(struct trojkat));
+}
